@@ -13,9 +13,9 @@ loader.setLibraryPath( 'https://cdn.jsdelivr.net/npm/rhino3dm@0.13.0/' )
 // call functions
 init()
 
-// load multiple models
-// create an array of model names
-const models = ['Rhino_Logo.3dm', 'what.3dm']
+//load multiple models
+//create an array of model names
+const models = ['test_primitives_pyramid_01.3dmbak', 'test_primitives_sphere_01.3dmbak']
 
 for ( let i = 0; i < models.length; i ++ ) {
 
@@ -23,7 +23,7 @@ for ( let i = 0; i < models.length; i ++ ) {
 
 }
 
-// hide spinner
+//hide spinner
 document.getElementById('loader').remove()
 animate()
 
@@ -36,11 +36,15 @@ function init () {
     // create a scene and a camera
     scene = new THREE.Scene()
     scene.background = new THREE.Color(1,1,1)
+
+
+
     camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
     camera.position.y = - 30
 
     // create the renderer and add it to the html
     renderer = new THREE.WebGLRenderer( { antialias: true } )
+    
     renderer.setSize( window.innerWidth, window.innerHeight )
     document.body.appendChild( renderer.domElement )
 
